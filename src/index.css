@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: "Airbnb Cereal";
+	src: url("/fonts/airbnb-cereal-font/AirbnbCereal_W_Lt.otf")
+		format("opentype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Airbnb Cereal";
+	src: url("/fonts/airbnb-cereal-font/AirbnbCereal_W_Bk.otf")
+		format("opentype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Airbnb Cereal";
+	src: url("/fonts/airbnb-cereal-font/AirbnbCereal_W_Md.otf")
+		format("opentype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Airbnb Cereal";
+	src: url("/fonts/airbnb-cereal-font/AirbnbCereal_W_Bd.otf")
+		format("opentype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Airbnb Cereal";
+	src: url("/fonts/airbnb-cereal-font/AirbnbCereal_W_Xbd.otf")
+		format("opentype");
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Airbnb Cereal";
+	src: url("/fonts/airbnb-cereal-font/AirbnbCereal_W_Blk.otf")
+		format("opentype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+body {
+	@apply font-cereal;
+}
+
+.faq-answer a {
+	@apply text-gray-600 underline font-medium;
+}
