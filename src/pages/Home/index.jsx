@@ -7,12 +7,6 @@ import Section4 from "../../components/Home/Section4";
 import MobileHeader from "../../components/MobileHeader";
 import { IoSearch } from "react-icons/io5";
 import { useRef, useState, useEffect } from "react";
-import {
-	Description,
-	Dialog,
-	DialogPanel,
-	DialogTitle,
-} from "@headlessui/react";
 import MapView from "../../components/Map";
 
 export default function Home() {
@@ -55,7 +49,6 @@ export default function Home() {
 		};
 	}, [isDragging]);
 
-	let [isOpenSearch, setIsOpenSearch] = useState(false);
 	return (
 		<>
 			<Header />
@@ -63,7 +56,7 @@ export default function Home() {
 			<div className="bg-white">
 				<div className="max-w-7xl mx-auto pt-20 xl:pb-[120px] pb-[72px]">
 					<div className="grid xl:grid-cols-2 grid-cols-1">
-						<div className="xl:px-0 lg:px-40 md:px-32 px-10">
+						<div className="xl:px-0 lg:px-40 md:px-32 px-6">
 							<h2 className="xl:text-[60px] md:text-[56px] text-[40px] font-semibold text-center md:leading-[4rem] text-gray-950 tracking-[-0.03em] leading-[2.3rem] xl:pb-6 md:pb-4 pb-6 xl:px-10 lg:px-24">
 								Kediaman anda boleh menjana pendapatan <br></br>
 								<span>RM1,508 di Airbnb</span>
@@ -115,12 +108,10 @@ export default function Home() {
 							</div>
 
 							{/* Search Bar */}
-							<div
-								className="relative xl:mb-8 mb-12 lg:px-24 px-10 cursor-pointer"
-								onClick={() => setIsOpenSearch(true)}>
-								<div className="flex items-center bg-white border border-gray-200 rounded-full px-6 py-4 shadow-sm hover:shadow-md transition-shadow">
+							<div className="relative xl:mb-8 mb-12 lg:px-24 cursor-pointer">
+								<div className="flex items-center bg-white border border-gray-200 rounded-full md:px-6 px-4 md:py-4 py-3 shadow-sm hover:shadow-md transition-shadow text-sm">
 									<IoSearch className="h-5 w-5 text-primary-500 mr-3" />
-									<div className="flex-1">
+									<div className="flex-1 md:block hidden">
 										<span className="font-medium text-gray-900">
 											Kuala Lumpur
 										</span>
@@ -128,42 +119,23 @@ export default function Home() {
 											• Seluruh kediaman • 2 bilik tidur
 										</span>
 									</div>
+									<div className="flex flex-col md:hidden">
+										<span className="font-medium text-gray-900">
+											Kuala Lumpur
+										</span>
+										<span className="text-gray-500 md:ml-2">
+											Seluruh kediaman • 2 bilik tidur
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div className="map-container h-[400px] xl:h-full xl:px-0 lg:px-44 px-24">
+						<div className="map-container h-[400px] xl:h-full xl:px-0 lg:px-44 md:px-24 px-6">
 							<MapView />
 						</div>
 					</div>
 				</div>
 			</div>
-			<Dialog
-				open={isOpenSearch}
-				onClose={() => setIsOpenSearch(false)}
-				className="relative z-50">
-				<div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-					<DialogPanel className="max-w-lg space-y-4 border bg-white p-12">
-						<DialogTitle className="font-bold">
-							Deactivate account
-						</DialogTitle>
-						<Description>
-							This will permanently deactivate your account
-						</Description>
-						<p>
-							Are you sure you want to deactivate your account?
-							All of your data will be permanently removed.
-						</p>
-						<div className="flex gap-4">
-							<button onClick={() => setIsOpenSearch(false)}>
-								Cancel
-							</button>
-							<button onClick={() => setIsOpenSearch(false)}>
-								Deactivate
-							</button>
-						</div>
-					</DialogPanel>
-				</div>
-			</Dialog>
 			<Section1 />
 			<Section2 />
 			<Section3 />
