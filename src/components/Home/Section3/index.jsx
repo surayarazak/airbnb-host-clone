@@ -43,13 +43,13 @@ export default function Section3() {
 
 	const responsive = {
 		tablet: {
-			breakpoint: { max: 768, min: 0 },
+			breakpoint: { max: 1024, min: 0 },
 			items: 1,
 			partialVisibilityGutter: 60,
 		},
 	};
 
-	function useIsMobile(maxWidth = 768) {
+	function useIsMobile(maxWidth = 1024) {
 		const [isMobile, setIsMobile] = useState(false);
 
 		useEffect(() => {
@@ -73,9 +73,9 @@ export default function Section3() {
 	return (
 		<>
 			<div className="bg-white xl:pb-[120px] md:pb-40 pb-16">
-				<div className="xl:max-w-xl max-w-md mx-auto md:px-0 px-6">
-					<div className="pb-14">
-						<h2 className="xl:text-[60px] md:text-[44px] text-[32px] font-semibold text-center xl:leading-[4rem] md:leading-[3rem] text-gray-950 tracking-[-0.03em] leading-10">
+				<div className="xl:max-w-xl lg:max-w-md md:max-w-lg max-w-md mx-auto md:px-0 px-6">
+					<div className="pb-14 md:pt-0 pt-12">
+						<h2 className="xl:text-[60px] lg:text-[44px] md:text-[40px] text-[32px] font-semibold text-center xl:leading-[4rem] md:leading-[3rem] text-gray-950 tracking-[-0.03em] leading-10">
 							Semua alat untuk menjadi hos, dalam satu aplikasi
 						</h2>
 					</div>
