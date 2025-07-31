@@ -3,10 +3,10 @@ import L from "leaflet";
 import { getRoomData } from "./service";
 import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+// import "react-multi-carousel/lib/styles.css";
 import React from "react";
 
-class CustomDot extends React.Component {
+export class CustomDot extends React.Component {
 	render() {
 		const { onClick, active } = this.props;
 		return (
